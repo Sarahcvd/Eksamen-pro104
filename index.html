@@ -42,8 +42,10 @@
             <!-- Andre felt -->
             <div id="to-do">
                 <h2>TO DO</h2>
-                <h5 onclick="createNewElement()"> + Add new task</h5>
+                <h5 id ="x2" onclick="createNewElement()"> + Add new task</h5>
                 <div id="inputField"></div>
+                <div id="outputTasks"></div>
+
             </div>
             <!-- Tredje felt -->
             <div id="in-progress">
@@ -58,5 +60,8 @@
                 <h2>REMINDERS</h2>
             </div>
         </div>
+        <script>
+            renderTasks();
+        </script>
     </body>
 </html>
