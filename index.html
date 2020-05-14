@@ -10,7 +10,7 @@
         <!--Hoved dokument for styling-->
         <link rel="stylesheet" type="text/css" href="style.css">
         <!--Hoved dokument for script-->
-        <script src="index.js"></script>
+        <script src="index.js" defer></script>
         
     </head>
     <body>
@@ -20,13 +20,16 @@
             <div>
                 <div class="popupCloseButton">&times;</div>
                     <h4>Add new member</h4>
+                    <input type="text" name="newMember" id="member-input" placeholder="Name..."><br>
+                    <input type="button" name="newMemberBtn" id="new-member-btn" value="Add member">
             </div>
         </div>
         <!-- Hoved div til alt innhold-->
         <div id="main-div">
             <!-- Header-->
             <div id="header">
-                <h3>Time remaining:</h3>
+                <h3 id="members-output">Members: </h3>
+                <h3 id="time-remaining">Time remaining:</h3>
             </div>
             <!-- Første felt som inkluderer både menu og progress felter-->
             <div id="sidebar">
