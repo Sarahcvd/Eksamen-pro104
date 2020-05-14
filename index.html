@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <title></title>
+        <!-- Linking til jQuery-->
+        <script src="jquery-1.7.1.min.js"></script>
+        <title>Project Management</title>
+        <!--Hoved dokument for styling-->
         <link rel="stylesheet" type="text/css" href="style.css">
+        <!--Hoved dokument for script-->
         <script src="index.js"></script>
-        <script src="https://www.google.com/jsapi"></script>
+        
     </head>
     <body>
+        <!-- Pop-up felt for new member knappen-->
         <div class="hover_bkgr_fricc">
             <span class="helper"></span>
             <div>
                 <div class="popupCloseButton">&times;</div>
-                <form onsubmit="createNewTask(event)">
-                    <h4>Add new task</h4>
-                    <div class="input"><input class="field" id="name" type="text" placeholder="Arbeidsoppgave"></div>
-                    <div class="input"><textarea class="field" name="task" placeholder="En beskrivelse av arbeidsoppgaven"></textarea></div>
-                    <div class="input"><input id="submit-btn" class="btn" type="submit" value="Legg til oppgave" title="Trykk for å legge til den nye oppgaven"></div>
-                </form>
+                    <h4>Add new member</h4>
             </div>
         </div>
+        <!-- Hoved div til alt innhold-->
         <div id="main-div">
+            <!-- Header-->
             <div id="header">
                 <h3>Time remaining:</h3>
             </div>
+            <!-- Første felt som inkluderer både menu og progress felter-->
             <div id="sidebar">
                 <div id="menu">
                     <h2>MENU</h2>
-                    <h5 class="trigger_popup_fricc">+ Add new task</h5><script src="https://www.google.com/jsapi"></script>
-                    <h5>+ Add member to project</h5>
+                    <h5 class="trigger_popup_fricc">+ Add member to project</h5><script src="https://www.google.com/jsapi"></script>
                     <h5>+ Chat</h5>
                 </div>
                 <div id="progress">
                     <h2>PROGRESS</h2>
                 </div>
             </div>
+            <!-- Andre felt -->
             <div id="to-do">
                 <h2>TO DO</h2>
+                <h5 onclick="createNewElement()"> + Add new task</h5>
+                <div id="inputField"></div>
             </div>
+            <!-- Tredje felt -->
             <div id="in-progress">
                 <h2>IN PROGRESS</h2>
             </div>
+            <!-- Fjerde felt -->
             <div id="finished">
                 <h2>FINISHED</h2>
             </div>
+            <!-- Siste felt -->
             <div id="reminders">
                 <h2>REMINDERS</h2>
             </div>
