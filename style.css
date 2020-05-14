@@ -1,0 +1,10 @@
+body{
+    background-color: ;
+}
+
+#main-div{
+    width: 90%; 
+    height: 100%; 
+    margin: 0 auto; 
+    background-color: blue;
+}
