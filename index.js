@@ -1,3 +1,5 @@
+// New member kode: 
+
 $(window).load(function () {
     //Ved klikk på denne classen, skal hover_bkgr_fricc vises. 
     $(".trigger_popup_fricc").click(function(){
@@ -9,6 +11,27 @@ $(window).load(function () {
     });
 });
 
+// Function for å lagre medlemer i localStorage
+document.getElementById("new-member-btn").onclick = function () {
+    var member = document.getElementById("member-input").value;
+
+    // Kun lagre om det er skrevet noe
+    if(member){
+        localStorage.setItem(member, member);
+        location.reload();
+    }
+};
+
+// printe ut alle medlemmer
+for(var i = 0; i < localStorage.length; i++){
+    var key = localStorage.key(i);
+    document.getElementById("members-output").innerHTML += ` ${key}, `;
+}
+
+
+
+
+// Task kode: 
 function createNewElement() {
     //Først lages en div
     var x2 = document.getElementById("x2");
@@ -51,15 +74,4 @@ function createNewTask(event){
     
 }
 
-function renderTasks(){
-    const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
-    const outputTaskEl = document.getElementById("outputTasks");
-    outputTaskEl.innerHTML = "";
-    for(const product of outputTask){
-        const productTwo = document.createElement("div");
-        const {name} = product;
-        
-        productTwo.innerHTML = "<div id='task'><h4>" + product.name + "</h4>" + "</div>" ;
-        outputTaskEl.appendChild(productTwo);
-    }
-}
+
