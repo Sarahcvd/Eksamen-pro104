@@ -60,6 +60,7 @@ h2{
     margin: 0;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+    opacity: 0.7;
 }
 
 
@@ -174,10 +175,36 @@ h2{
     width: 100%; 
     height: 60px; 
     border-top: 3px dotted white;
+    position: relative;
+    
 }
 
-#task h4{
-    padding-left: 10px;
+#task img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    display: none;
+}
+
+#task:hover img{
+    display: block;
+    cursor: pointer; 
+}
+
+#task:hover{
+    opacity: 0.8;
+    cursor: pointer; 
+}
+
+#task p{
+    margin-top: 6px;
+    max-width: 80%;
+    margin-left:10%;
+    margin-right: 20%;
+    color: white;
+    font-size: 14px;
 }
 
 
@@ -185,7 +212,8 @@ h2{
 /*Tredje felt*/ 
 #in-progress{
     width: 19%; 
-    height: 800px;
+    height: auto;
+    min-height: 150px;
     background-color: #a6d382; 
     position: absolute;
     left: 40%;
@@ -201,7 +229,8 @@ h2{
 /*Fjerde felt*/ 
 #finished{
     width: 19%; 
-    height: 800px;
+    height: auto;
+    min-height: 150px;
     background-color: #bb6bd9; 
     position: absolute;
     left: 60%;
@@ -217,7 +246,8 @@ h2{
 /*Femte felt*/
 #reminders{
     width: 19%; 
-    height: 800px;
+    height: auto;
+    min-height: 150px;
     background-color: #fbff00; 
     position: absolute;
     left: 80%;

@@ -4,8 +4,19 @@ function renderTasks() {
     outputTaskEl.innerHTML = "";
     for (const product of outputTask) {
         const productTwo = document.createElement("div");
-        const { name } = product;
-        productTwo.innerHTML = "<div id='task'><h4>" + product.name + "</h4>" + "</div>";
+        productTwo.setAttribute('class', 'task')
+        
+        const { task } = product;
+        productTwo.innerHTML = "<div id='task'><p>" + product.task + "</p>" + "<img src='images/pencil.png' onclick='changeValue()'></div>";
         outputTaskEl.appendChild(productTwo);
     }
+    
+        for ( i = 0; i < outputTask.length; i++){
+            var taskId = document.getElementsByClassName("task");
+            taskId[i].id = "task" + (i + 1);
+        }
 }
+
+
+
+

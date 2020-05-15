@@ -17,15 +17,25 @@ document.getElementById("new-member-btn").onclick = function () {
 
     // Kun lagre om det er skrevet noe
     if(member){
-        localStorage.setItem(member, member);
+        var members = JSON.parse(window.localStorage.getItem("members")) || [];
+        members.push(member);
+        window.localStorage.setItem("members", JSON.stringify(members));
         location.reload();
     }
 };
 
+$(document).ready(function(){
+    $('#member-input').keypress(function(ev){
+      //If user pressed Enter Key then trigger Submit click
+      if(ev.keyCode==13)
+      $('#new-member-btn').click();
+    });
+});
+
 // printe ut alle medlemmer
-for(var i = 0; i < localStorage.length; i++){
-    var key = localStorage.key(i);
-    document.getElementById("members-output").innerHTML += ` ${key}, `;
+var members = JSON.parse(window.localStorage.getItem("members"));
+for(var i = 0; i < members.length; i++){
+    document.getElementById("members-output").innerHTML += members[i]+','  ;
 }
 
 
@@ -60,18 +70,19 @@ $(document).ready(function(){
 
 function createNewTask(event){
     var x = document.getElementById("inputField");
-    const name = document.getElementById("newInputBox").value;
-    const product = {name};
+    const task = document.getElementById("newInputBox").value;
+    const product = {task};
 
-    const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
-    outputTask.push(product);
-    window.localStorage.setItem("outputTask", JSON.stringify(outputTask)); 
-    renderTasks();
+    if (task) {
+        const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
+        outputTask.push(product);
+        window.localStorage.setItem("outputTask", JSON.stringify(outputTask)); 
+        renderTasks();
 
-    event.target.reset();
-    x.style.display = "none";
-    x2.style.display = "block";
-    
+        event.target.reset();
+        x.style.display = "none";
+        x2.style.display = "block";
+    }
 }
 
 
