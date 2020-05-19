@@ -13,9 +13,11 @@
         <script src="index.js" defer></script>
         <script src="renderTasks.js"></script>
         <link rel="icon" type="image/png" href="images/favicon.ico" sizes="16x16" />
+
         
     </head>
     <body>
+        
         <!-- Pop-up felt for new member knappen-->
         <div class="hover_bkgr_fricc">
             <span class="helper"></span>
@@ -26,6 +28,7 @@
                     <input type="button" name="newMemberBtn" id="new-member-btn" value="Add member">
             </div>
         </div>
+        
         <!-- Hoved div til alt innhold-->
         <div id="main-div">
             <!-- Header-->
@@ -33,6 +36,7 @@
                 <h3 id="members-output">Members: </h3>
                 <h3 id="time-remaining">Time remaining:</h3>
             </div>
+
             <!-- Første felt som inkluderer både menu og progress felter-->
             <div id="sidebar">
                 <div id="menu">
@@ -44,29 +48,32 @@
                     <h2>PROGRESS</h2>
                 </div>
             </div>
+
             <!-- Andre felt -->
             <div id="to-do">
                 <h2>TO DO</h2>
                 <h5 id ="x2" onclick="createNewElement()"> + Add new task</h5>
                 <div id="inputField"></div>
                 <div id="outputTasks"></div>
-
             </div>
+
             <!-- Tredje felt -->
             <div id="in-progress">
                 <h2>IN PROGRESS</h2>
             </div>
+
             <!-- Fjerde felt -->
             <div id="finished">
                 <h2>FINISHED</h2>
             </div>
+
             <!-- Siste felt -->
             <div id="reminders">
                 <h2>REMINDERS</h2>
             </div>
         </div>
         <script>
-        renderTasks();
+            renderTasks();
         </script>
     </body>
 </html>
