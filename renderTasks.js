@@ -9,13 +9,14 @@ function renderTasks() {
         productTwo.setAttribute('class', 'task')
         
         const { task } = product;
+        // Selve tasken og dropdown menyen til taskene
         productTwo.innerHTML = 
         "<div id='task'>" + 
             "<p>" + product.task + "</p>" + 
             "<ul>" +
                 "<li><img id='pencil-img' src='images/pencil.png'>"+ 
                     "<ul class='dropdown-menu'>" +
-                        "<li><a href='#'>Add Member</a></li>" +
+                        "<li><a id ='task-member-btn' href='#'>Add Member</a></li>" +
                         "<li><a href='#'>Change status</a></li>" +
                     "</ul>"
                 "</li>" + 
@@ -29,5 +30,3 @@ function renderTasks() {
             taskId[i].id = "task" + (i + 1);
         }
 };
-
-

@@ -206,6 +206,8 @@ h2{
     margin-right: 20%;
     color: white;
     font-size: 16px;
+    top: 15px;
+    position: absolute;
 }
 
 .dropdown-menu {
@@ -219,10 +221,11 @@ h2{
     background-color: #fff;
 }
 
+/* Ved hover på bildet vil menyen synes */
 #task ul li:hover .dropdown-menu{
     display: block;
 }
-
+/* for å fjerne liste-punkter */
 #task ul li {
     list-style: none;
 }
@@ -234,9 +237,13 @@ h2{
 
 .dropdown-menu li a:hover{
     background-color: #cccaca;
+    cursor: pointer;
 }
 
-
+.dropdown-menu a {
+    text-decoration: none;
+    color: black;
+}
 
 /*Tredje felt*/ 
 #in-progress{
