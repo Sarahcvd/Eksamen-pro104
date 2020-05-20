@@ -35,7 +35,7 @@ $(document).ready(function(){
 // printe ut alle medlemmer
 var members = JSON.parse(window.localStorage.getItem("members"));
 for(var i = 0; i < members.length; i++){
-    document.getElementById("members-output").innerHTML += members[i]+','  ;
+    document.getElementById("members-output").innerHTML += members[i]+', '  ;
 }
 
 
@@ -59,6 +59,7 @@ function createNewElement() {
     //Dermed legges txtNewInputBox til som ny child
     document.getElementById("inputField").appendChild(txtNewInputBox);
 }
+
 // Kode dersom enter trykkes
 $(document).ready(function(){
     $('#newInputBox').keypress(function(ev){
@@ -86,3 +87,10 @@ function createNewTask(event){
 }
 
 
+var taskMemberBtn = document.getElementById("task-member-btn");
+var task1 = document.getElementById("task1");
+
+taskMemberBtn.onclick = function (){
+    
+    alert("test")
+};
