@@ -12,6 +12,7 @@
         <!--Hoved dokument for script-->
         <script src="index.js" defer></script>
         <script src="renderTasks.js"></script>
+        <script src="drag&Drop.js"></script>
         <link rel="icon" type="image/png" href="images/favicon.ico" sizes="16x16" />
 
         
@@ -78,49 +79,7 @@
         </div>
         <script>
             renderTasks();
-
-            //mulig vi kan sette dette et annet sted, er litt usikker 
-            //den nye div'tagen som lages 
-             const taskItems = document.querySelectorAll('.task'); 
-            
-            //får tak i hvert felt av dit det går an å dra elementene 
-            const taskFields = document.querySelectorAll('.taskField');
-            
-            let draggedItem = null; 
-            
-            for (let i = 0; i < taskItems.length; i++) {
-                const item = taskItems[i];
-                
-                item.addEventListener('dragstart', function () {
-                    draggedItem = item; 
-                    setTimeout(function () {
-                    }, 0)
-                }); 
-                
-                item.addEventListener('dragend', function () {
-                    setTimeout(function () {
-                        draggedItem.style.display = 'block'; 
-                        draggedItem = null; 
-                    }, 0);
-                })
-                
-                for (let j = 0; j < taskFields.length; j ++) {
-                    const list = taskFields[j]; 
-                    
-                    list.addEventListener('dragover', function (e) {
-                        e.preventDefault(); 
-                    }); 
-                    list.addEventListener('dragenter', function (e) {
-                        e.preventDefault(); 
-                    }); 
-                    list.addEventListener('drop', function (e) {
-                        e.preventDefault(); 
-                        this.append(draggedItem); 
-                    }); 
-                }
-            }
-
-
+            dragDrop(); 
         </script>
     </body>
 </html>
