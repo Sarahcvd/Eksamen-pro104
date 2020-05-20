@@ -6,7 +6,9 @@ function renderTasks() {
     outputTaskEl.innerHTML = "";
     for (const product of outputTask) {
         const productTwo = document.createElement("div");
-        productTwo.setAttribute('class', 'task')
+        productTwo.setAttribute('class', 'task');
+        //lagt til draggable 
+        productTwo.setAttribute('draggable', true); 
         
         const { task } = product;
         // Selve tasken og dropdown menyen til taskene
