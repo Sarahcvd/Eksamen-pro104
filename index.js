@@ -14,32 +14,33 @@ $(window).load(function () {
 // Function for å lagre medlemer i localStorage
 document.getElementById("new-member-btn").onclick = function () {
     var member = document.getElementById("member-input").value;
+    var stilling = document.getElementById("stilling-input").value;
+    var newMember = {member, stilling};
 
     // Kun lagre om det er skrevet noe
     if(member){
         var members = JSON.parse(window.localStorage.getItem("members")) || [];
-        members.push(member);
+        members.push(newMember);
         window.localStorage.setItem("members", JSON.stringify(members));
+        renderMembers();
         location.reload();
     }
-};
+}
 
 $(document).ready(function(){
-    $('#member-input').keypress(function(ev){
+    $('#member-input').keypress(function(ev)  {
       //If user pressed Enter Key then trigger Submit click
       if(ev.keyCode==13)
       $('#new-member-btn').click();
     });
 });
-
-// printe ut alle medlemmer
-var members = JSON.parse(window.localStorage.getItem("members"));
-for(var i = 0; i < members.length; i++){
-    document.getElementById("members-output").innerHTML += members[i]+','  ;
-}
-
-
-
+$(document).ready(function(){
+    $('#stilling-input').keypress(function(ev)  {
+      //If user pressed Enter Key then trigger Submit click
+      if(ev.keyCode==13)
+      $('#new-member-btn').click();
+    });
+});
 
 // Task kode: 
 function createNewElement() {
@@ -68,21 +69,22 @@ $(document).ready(function(){
     });
 });
 
+
 function createNewTask(event){
     var x = document.getElementById("inputField");
-    const task = document.getElementById("newInputBox").value;
-    const product = {task};
+    var task = document.getElementById("newInputBox").value;
+    var deadline = "test";
+    var member = "";
+    var product = {member, task, deadline};
 
     if (task) {
-        const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
+        var outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
         outputTask.push(product);
         window.localStorage.setItem("outputTask", JSON.stringify(outputTask)); 
         renderTasks();
-
+        
         event.target.reset();
         x.style.display = "none";
         x2.style.display = "block";
     }
 }
-
-

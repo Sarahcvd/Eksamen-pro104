@@ -1,26 +1,25 @@
 
 
 function renderTasks() {
-    const outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
-    const outputTaskEl = document.getElementById("outputTasks");
+    var outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
+    var outputTaskEl = document.getElementById("outputTasks");
     outputTaskEl.innerHTML = "";
-    for (const product of outputTask) {
-        const productTwo = document.createElement("div");
+    for (var product of outputTask) {
+        var productTwo = document.createElement("div");
         productTwo.setAttribute('class', 'task')
         
-        const { task } = product;
-        productTwo.innerHTML = 
-        "<div id='task'>" + 
-            "<p>" + product.task + "</p>" + 
-            "<ul>" +
+        var {id,task,deadline} = product;
+        productTwo.innerHTML =  
+            "<p>" + product.task +" (" +  product.deadline + ")</p>" +
+            "<ul id='test'>" +
                 "<li><img id='pencil-img' src='images/pencil.png'>"+ 
                     "<ul class='dropdown-menu'>" +
                         "<li><a href='#'>Add Member</a></li>" +
                         "<li><a href='#'>Change status</a></li>" +
+                        "<li><a href='#'>Delete task</a></li>" +
                     "</ul>"
                 "</li>" + 
-            "</ul>" +
-        "</div>" ;
+            "</ul>";
         outputTaskEl.appendChild(productTwo);
     }
     
@@ -30,4 +29,23 @@ function renderTasks() {
         }
 };
 
+function renderMembers() {
+    var storage = JSON.parse(localStorage.getItem("members")) || [];
+    var outputDiv = document.getElementById("members-output");
 
+    for (var newMember of storage){
+        var {member, stilling} = newMember;
+        var newDiv = document.createElement("h5");
+        
+        newDiv.innerHTML += newMember.member ;
+        outputDiv.appendChild(newDiv);
+
+        if (newMember.stilling) {
+            newDiv.setAttribute('data-title', newMember.stilling);
+        }
+
+        else {
+            newDiv.setAttribute('data-title', 'Du må sette en rolle for denne deltakeren');
+        }
+    }
+}

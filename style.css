@@ -15,13 +15,44 @@ body{
 
 #header{
     /*width: 100%; */
-    height: 60px;
+    height: 85px;
     position: relative;
     background-color: none; 
     color: #c4c4c4; 
 }
 
 /*Tekstformatering*/
+[data-title] {
+    position: relative;
+}
+
+[data-title]:hover::before {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -28px;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 2px;
+    background: gray;
+    color: #fff;
+    font-size: 12px;
+    font-family: sans-serif;
+    white-space: nowrap;
+    opacity: 0.8;
+    line-height: 20px;
+}
+[data-title]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 8px;
+    display: inline-block;
+    color: #fff;
+    border: 8px solid transparent;	
+    border-bottom: 8px solid gray;
+    opacity: 0.8;
+}
+
 #time-remaining{
     position: absolute;
     text-align: right;
@@ -34,6 +65,25 @@ body{
     left: 300px;
 }
 
+#members-output h3{
+    float: left;
+}
+
+#members-output h5{
+    float: left;
+    margin-left: 20px;
+    border-radius: 10px;
+    color: white;
+    min-width: 100px;
+    width: auto; 
+    background-color: gray;
+}
+
+#members-output h4:hover{
+    opacity: 0.8;
+    transition-duration: 0.4s;
+}
+
 h5{
     color: black;
     width: 90%;
@@ -44,11 +94,12 @@ h5{
     background-color: white;
     border-radius: 10px;
     text-align: center;
+    line-height: 36px;
 }
 h5:hover{
     opacity: 0.8;
-    cursor: pointer;
     transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 h2{
@@ -127,7 +178,6 @@ h2{
 #inputField{
     width: 100%; 
     height: 36px;
-    overflow: hidden; 
     margin-bottom: 10px;
     margin-top: 10px;
     display: none;
@@ -171,7 +221,7 @@ h2{
     height: auto;
 }
 
-#task{
+.task{
     width: 100%; 
     height: 60px; 
     border-top: 3px dotted white;
@@ -179,7 +229,7 @@ h2{
     
 }
 
-#task img{
+.task img{
     width: 30px;
     height: 30px;
     position: absolute;
@@ -189,17 +239,17 @@ h2{
     z-index: 3;
 }
 
-#task:hover img{
+.task:hover img{
     display: block;
     cursor: pointer;
 }
 
-#task:hover{
+.task:hover{
     opacity: 0.8;
     z-index: 2;
 }
 
-#task p{
+.task p{
     margin-top: 6px;
     max-width: 80%;
     margin-left: 10%;
@@ -219,11 +269,11 @@ h2{
     background-color: #fff;
 }
 
-#task ul li:hover .dropdown-menu{
+.task ul li:hover .dropdown-menu{
     display: block;
 }
 
-#task ul li {
+.task ul li {
     list-style: none;
 }
 
