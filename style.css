@@ -166,17 +166,31 @@ h2{
 }
 
 /*Styling tilhørende divboks etter henting fra LocalStorage*/
-#outputTasks{
+.taskField {
     width: 100%;
+    min-height: 160px;
     height: auto;
 }
 
-#task{
-    width: 100%; 
+.task {
+    width: 80%;
+    margin: 3px; 
     height: 60px; 
-    border-top: 3px dotted white;
+    border: 2px solid white;
+    border-radius: 40px;
     position: relative;
-    
+    text-align: center;
+    left: 5%; 
+}
+
+#task{
+    width: 80%; 
+    height: 50px; 
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    left: 5%;
+    border-radius: 40px;
 }
 
 #task img{
@@ -207,7 +221,8 @@ h2{
     color: white;
     font-size: 16px;
     top: 15px;
-    position: absolute;
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-menu {
