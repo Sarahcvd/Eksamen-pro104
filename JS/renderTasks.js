@@ -16,7 +16,7 @@ function renderTasks() {
         "<div id='task'>" + 
             "<p>" + product.task + "</p>" + 
             "<ul>" +
-                "<li><img id='pencil-img' src='images/pencil.png'>"+ 
+                "<li><img id='pencil-img' src='images/pencil.png' alt='task-options. Pencil'>"+ 
                     "<ul class='dropdown-menu'>" +
                         "<li><a href='#'>Change task</a></li>" +
                         "<li><a href='#'>Delete task</a></li>" +
