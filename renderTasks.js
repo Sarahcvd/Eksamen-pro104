@@ -20,6 +20,7 @@ function renderTasks() {
                     "<ul class='dropdown-menu'>" +
                         "<li><a id ='task-member-btn' href='#'>Add Member</a></li>" +
                         "<li><a href='#'>Change status</a></li>" +
+                        "<li><a href='#'>Delete task</a><li>" +
                     "</ul>"
                 "</li>" + 
             "</ul>" +

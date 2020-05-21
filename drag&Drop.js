@@ -10,6 +10,7 @@ function dragDrop() {
         item.addEventListener('dragstart', function () {
             draggedItem = item; 
             setTimeout(function () {
+                item.style.display = 'none'; 
             }, 0)
         }); 
         
@@ -24,9 +25,6 @@ function dragDrop() {
             const list = taskFields[j]; 
             
             list.addEventListener('dragover', function (e) {
-                e.preventDefault(); 
-            }); 
-            list.addEventListener('dragenter', function (e) {
                 e.preventDefault(); 
             }); 
             list.addEventListener('drop', function (e) {
