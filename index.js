@@ -35,7 +35,7 @@ $(document).ready(function(){
 // printe ut alle medlemmer
 var members = JSON.parse(window.localStorage.getItem("members"));
 for(var i = 0; i < members.length; i++){
-    document.getElementById("members-output").innerHTML += members[i]+','  ;
+    document.getElementById("members-output").innerHTML += members[i]+', '  ;
 }
 
 
@@ -59,6 +59,7 @@ function createNewElement() {
     //Dermed legges txtNewInputBox til som ny child
     document.getElementById("inputField").appendChild(txtNewInputBox);
 }
+
 // Kode dersom enter trykkes
 $(document).ready(function(){
     $('#newInputBox').keypress(function(ev){
@@ -87,6 +88,7 @@ function createNewTask(event){
 
 var deadline = 'May 27 2020 24:00:00';
 
+<<<<<<< HEAD
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor((t / 1000) % 60);
@@ -128,3 +130,12 @@ function initializeClock(id, endtime) {
 
 var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 initializeClock('clockdiv', deadline);
+=======
+var taskMemberBtn = document.getElementById("task-member-btn");
+var task1 = document.getElementById("task1");
+
+taskMemberBtn.onclick = function (){
+    
+    alert("test")
+};
+>>>>>>> e3114b01dba2e12cfb24d41db59c3c5bb789401b
