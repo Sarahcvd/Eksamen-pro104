@@ -3,7 +3,7 @@ body{
     margin: 0; 
     padding: 0;
     text-align: center;
-    background: #00ECB9;
+    background: rgb(196, 235, 238);
     font-weight: 100;
 }
 
@@ -29,7 +29,7 @@ h2{
     text-align: center;
     color: white;
     height: 40px;
-    background-color: gray;
+    background-color: rgb(48, 47, 47);
     margin: 0;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -40,12 +40,13 @@ h2{
 /* HEADER */
 #header{
     background-color: none; 
-    color: #fff;
+    
 }
 
 #members-output{
     position: relative;
     top: 25px;
+    color: rgb(58, 57, 57);
 }
 h1{
     color: #396;
@@ -61,6 +62,7 @@ h1{
 }
 
 #clockdiv > div{
+    color: #fff;
     padding: 10px;
     border-radius: 3px;
     background: #00BF96;
@@ -83,6 +85,7 @@ h1{
 position: relative;
 top: -25px;
 padding-bottom: 20px;
+color: rgb(58, 57, 57);
 }
 
 
@@ -112,7 +115,7 @@ padding-bottom: 20px;
 #progress{
     min-height: 200px;
     border-radius: 40px;
-    background-color: #f65c78;
+    background-color: #f6b35c;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
     0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -127,7 +130,7 @@ padding-bottom: 20px;
 #to-do{
     height: auto;
     min-height: 150px;
-    background-color: #56ccf2; 
+    background-color: #f195f3; 
     border-radius: 40px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -189,7 +192,7 @@ padding-bottom: 20px;
     border: 2px solid white;
     border-radius: 40px;
     text-align: center;
-    background-color: pink;
+    background-color: rgb(102, 101, 101);
 }
 
 #task{
@@ -200,6 +203,8 @@ padding-bottom: 20px;
     text-align: center;
     left: 5%;
     border-radius: 40px;
+    font-weight: bold;
+    
 }
 
 #task img{
@@ -275,7 +280,7 @@ padding-bottom: 20px;
 #in-progress{
     height: auto;
     min-height: 150px;
-    background-color: #a6d382; 
+    background-color: #6bc7e6; 
     border-radius: 40px;
     box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -291,7 +296,7 @@ padding-bottom: 20px;
 #finished{ 
     height: auto;
     min-height: 150px;
-    background-color: #bb6bd9; 
+    background-color: #2ecf2e; 
     border-radius: 40px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
