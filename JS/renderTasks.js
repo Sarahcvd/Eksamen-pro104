@@ -12,13 +12,14 @@ function renderTasks() {
         
         var {task,member,deadline} = product;
         // Selve tasken og dropdown menyen til taskene
-        productTwo.innerHTML =  
-            "<p id='test9'>" + product.task +"</p>" +
-            "<ul id='test'>" +
-                "<li><img id='pencil-img' src='images/pencil.png'>"+ 
+        productTwo.innerHTML = 
+        "<div id='task'>" + 
+            "<p>" + product.task + "</p>" + 
+            "<ul>" +
+                "<li><img id='pencil-img' src='images/pencil.png' alt='task-options. Pencil'>"+ 
                     "<ul class='dropdown-menu'>" +
-                        "<li><a href='#' onclick='deleteTask(" + product.id + ")'>Delete task</a></li>" +
-                        "<li><a href='#' onclick='editTask(" + product.id + ")'>Edit task</a></li>" +
+                    "<li><a href='#' onclick='deleteTask(" + product.id + ")'>Delete task</a></li>" +
+                    "<li><a href='#' onclick='editTask(" + product.id + ")'>Edit task</a></li>" +
                     "</ul>"
                 "</li>" + 
             "</ul>";

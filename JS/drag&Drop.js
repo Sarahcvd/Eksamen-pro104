@@ -43,27 +43,26 @@ function dragDropMembers(){
 function dragDropItems() {
     const taskItems = document.querySelectorAll('.task'); 
     const taskFields = document.querySelectorAll('.taskField');
-    
 
-    
     for (let i = 0; i < taskItems.length; i++) {
         const item = taskItems[i];
+
         item.addEventListener('dragstart', function () {
             draggedItem = item; 
             setTimeout(function () {
             }, 0)
         }); 
-        
+
         item.addEventListener('dragend', function () {
             setTimeout(function () {
                 
+                
             }, 0);
         })
-        
+
         for (let j = 0; j < taskFields.length; j ++) {
             const list = taskFields[j]; 
             draggedItem = item;
-            
             list.addEventListener('dragover', function (e) {
                 e.preventDefault(); 
             }); 
