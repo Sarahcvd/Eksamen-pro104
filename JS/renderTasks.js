@@ -14,7 +14,7 @@ function renderTasks() {
         // Selve tasken og dropdown menyen til taskene
         productTwo.innerHTML = 
         "<div id='task'>" + 
-            "<p>" + product.task + "</p>" + 
+            "<p id='pElement'>" + product.task +" "+ product.member + "</p>" + 
             "<ul>" +
                 "<li><img id='pencil-img' src='images/pencil.png' alt='task-options. Pencil'>"+ 
                     "<ul class='dropdown-menu'>" +

@@ -89,27 +89,22 @@ function createNewTask(event){
         renderTasks();
         
         event.target.reset();
-        x.style.display = "none";
-        x2.style.display = "block";
+        location.reload();
     }
 }
-/*
-function editTask(i){
-    var currentValue = JSON.parse(localStorage.getItem("outputTask"));
-    console.log(currentValue);    	
-    document.getElementById("demo").innerHTML +=  currentValue[i].task;
-}
 
-/*function deleteTask(i){
+
+function deleteTask(i){
   var currentValue = JSON.parse(localStorage.getItem("outputTask"));
+  console.log(currentValue);
   var indexToRemove = i;
   console.log(indexToRemove);
-  currentValue.slice(indexToRemove, 1);
+  currentValue.splice(indexToRemove, 1);
   console.log(currentValue);
   localStorage.setItem("outputTask", JSON.stringify(currentValue));
   console.log(currentValue);
+  location.reload();
 }
-*/
 
 var deadline = 'May 27 2020 24:00:00';
 

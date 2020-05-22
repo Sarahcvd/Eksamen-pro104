@@ -2,11 +2,10 @@ function dragDropMembers(){
     const memberItem = document.querySelectorAll('.members');
     const taskItems = document.querySelectorAll('.task'); 
     const taskFields = document.querySelectorAll('.taskField');
-    
+    let storageProfileString = localStorage.getItem("outputTask"); 
 
     for (let i = 0; i < memberItem.length; i++){
         const member = memberItem[i];
-
         member.addEventListener('dragstart', function(){
             draggedMember = event.target.innerText;
             event.dataTransfer.setData("text/plain", draggedMember);
@@ -17,7 +16,7 @@ function dragDropMembers(){
             setTimeout(function (){                
             }, 0)
         });
-
+    
         for (let j = 0; j < taskItems.length; j ++) {
             const listMembers = taskItems[j]; 
             
@@ -30,9 +29,11 @@ function dragDropMembers(){
             listMembers.addEventListener('drop', function (e) {
                 e.preventDefault(); 
                 event.dataTransfer.getData("text/plain");
-                listMembers.innerHTML += "<p class='memberP'>(" + draggedMember + ")</p>";
                 console.log(draggedMember);
-                
+                let assignedMember = JSON.parse(storageProfileString);
+                assignedMember[j].member += "(" + draggedMember + ")";
+                localStorage.setItem("outputTask", JSON.stringify(assignedMember));
+                location.reload();
             }); 
 
         }
