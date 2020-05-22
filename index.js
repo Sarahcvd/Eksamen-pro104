@@ -11,7 +11,7 @@ $(window).load(function () {
     });
 });
 
-// Function for å lagre medlemer i localStorage
+// Function for å lagre medlemmer i localStorage
 document.getElementById("new-member-btn").onclick = function () {
     var member = document.getElementById("member-input").value;
     var stilling = document.getElementById("stilling-input").value;
@@ -75,10 +75,14 @@ function createNewTask(event){
     var task = document.getElementById("newInputBox").value;
     var deadline = "test";
     var member = "";
-    var product = {member, task, deadline};
 
     if (task) {
-        var outputTask = JSON.parse(window.localStorage.getItem("outputTask")) || [];
+        var outputTask = JSON.parse(localStorage.getItem("outputTask")) || [];
+        
+        var id = outputTask.length;
+        
+        var product = {id, member, task, deadline};
+
         outputTask.push(product);
         window.localStorage.setItem("outputTask", JSON.stringify(outputTask)); 
         renderTasks();
@@ -88,3 +92,20 @@ function createNewTask(event){
         x2.style.display = "block";
     }
 }
+/*
+function editTask(i){
+    var currentValue = JSON.parse(localStorage.getItem("outputTask"));
+    console.log(currentValue);    	
+    document.getElementById("demo").innerHTML +=  currentValue[i].task;
+}
+
+function deleteTask(i){
+    var currentValue = JSON.parse(localStorage.getItem("outputTask"));
+    var indexToRemove = i;
+    console.log(indexToRemove);
+    currentValue.slice(indexToRemove, 1);
+    console.log(currentValue);
+    localStorage.setItem("outputTask", JSON.stringify(currentValue));
+    console.log(currentValue);
+}
+*/

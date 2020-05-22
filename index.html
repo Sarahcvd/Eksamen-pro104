@@ -12,6 +12,7 @@
         <!--Hoved dokument for script-->
         <script src="index.js" defer></script>
         <script src="renderTasks.js"></script>
+        <script src="drag&Drop.js"></script>
         <link rel="icon" type="image/png" href="images/favicon.ico" sizes="16x16" />
 
         
@@ -43,7 +44,6 @@
                 <div id="menu">
                     <h2>MENU</h2>
                     <h5 class="trigger_popup_fricc">+ Add member to project</h5><script src="https://www.google.com/jsapi"></script>
-                    <h5>+ Chat</h5>
                     <h5>Calendar</h5>
                     <h5>Set deadline</h5>
                 </div>
@@ -57,27 +57,32 @@
                 <h2>TO DO</h2>
                 <h5 id ="x2" onclick="createNewElement()"> + Add new task</h5>
                 <div id="inputField"></div>
-                <div id="outputTasks"></div>
+                <!--Gir den en klasse, taskField som brukes til å dra divene til alle steder-->
+                <div id="outputTasks" class="taskField"></div>
+                
             </div>
 
             <!-- Tredje felt -->
             <div id="in-progress">
                 <h2>IN PROGRESS</h2>
+                <div class="taskField"></div>
             </div>
 
             <!-- Fjerde felt -->
             <div id="finished">
                 <h2>FINISHED</h2>
+                <div class="taskField"></div>
             </div>
 
             <!-- Siste felt -->
             <div id="reminders">
                 <h2>REMINDERS</h2>
+                <div class="taskField"></div>
             </div>
         </div>
         <script>
             renderTasks();
             renderMembers();
+            dragDropItems(); 
+            dragDropMembers();
         </script>
-    </body>
-</html>
